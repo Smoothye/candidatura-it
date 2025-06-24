@@ -1,11 +1,41 @@
 ---
-
+import Button1 from "./Buttons/Button-1.astro";
 ---
 
 <header>
-
     <nav>
-        
-    </nav>
 
+        <img src="" alt="Logo Candidatura">
+
+        <div id="links">
+            <Button1 text="Despre Mine" />
+        </div>
+
+    </nav>
 </header>
+
+<style>
+
+    nav {
+        border: 1px solid black;
+
+        min-height: 100px;
+
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        align-items: center;
+    }
+
+    img {
+        display: block;
+        justify-self: center;
+    }
+
+    #links {
+
+        justify-self: end;
+        margin-right: clamp(5px, 1vw, 10px);
+    }
+
+
+</style>
