@@ -2,18 +2,98 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
+
+const headerHeight = "70px";
 ---
 
 <BaseLayout>
 
-	<Header />
+	<Header height={headerHeight} />
 
 	<main>
 
-		
+		<div class="snap-point">
+			<img src="/images/eu.jpg" alt="eu">
+			<div class="text">
+				<h1> Descriere </h1>
+				<table>
+					<tbody>
+						<tr>
+							<td><strong> nume: </strong></td>
+							<td> Petruț Raul-Sabin </td>
+						</tr>
+						<tr>
+							<td><strong> vârstă: </strong></td>
+							<td> 21 de anișori </td>
+						</tr>
+						<tr>
+							<td><strong> înălțime: </strong></td>
+							<td> 176cm </td>
+						</tr>
+						<tr>
+							<td><strong> generație: </strong></td>
+							<td> PMVW (primavara 2024) </td>
+						</tr>
+						<tr>
+							<td><strong> facultate: </strong></td>
+							<td> Automatică și Calculatoare </td>
+						</tr>
+						<tr>
+							<td><strong> anul: </strong></td>
+							<td> II (2) (doi) ✌️ </td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="snap-point" style="font-size: 10rem;" > 2 </div>
+		<div class="snap-point" style="font-size: 10rem;" > 3 </div>
 
 	</main>
 
 	<Footer />
 
 </BaseLayout>
+
+<style define:vars={{ headerHeight }}>
+
+	main {
+
+		max-height: calc(100vh - var(--headerHeight) );
+		overflow-y: scroll;
+		scroll-snap-type: y mandatory;
+	}
+
+	.snap-point {
+
+		min-height: calc(100vh - var(--headerHeight) );
+		background-color: pink;
+		border: 2px sotrd black;
+
+		scroll-snap-align: center;
+
+		display: grid;
+		grid-template-columns: 2fr 3fr;
+
+	}
+
+	img {
+
+		max-height: 100vh;
+		max-width: 100%;
+
+		atrgn-self: center;
+	}
+
+	.text { padding: 20px 30px; }
+	.text table {
+		margin: 20px 0;
+	}
+	.text td {
+		
+		padding: 5px 10px;
+		font-size: 1.5rem;
+	}
+
+</style>
