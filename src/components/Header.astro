@@ -1,5 +1,9 @@
 ---
 import Button1 from "./Buttons/Button-1.astro";
+import Button2 from "./Buttons/Button-2.astro";
+import Button3 from "./Buttons/Button-3.astro";
+
+const { backgroundColor="white" } = Astro.props;
 ---
 
 <header>
@@ -8,13 +12,20 @@ import Button1 from "./Buttons/Button-1.astro";
         <img src="" alt="Logo Candidatura">
 
         <div id="links">
-            <Button1 text="Despre Mine" />
+            <Button1 text="Despre Mine" link="/despreMine" />
+            <Button2 text="De Ce IT?" />
+            <Button3 text="De Ce Eu?" />
         </div>
 
     </nav>
 </header>
 
-<style>
+<style define:vars={{ backgroundColor }}>
+
+    header {
+
+        background-color: var( --backgroundColor );
+    }
 
     nav {
         border: 1px solid black;
@@ -34,7 +45,7 @@ import Button1 from "./Buttons/Button-1.astro";
     #links {
 
         justify-self: end;
-        margin-right: clamp(5px, 1vw, 10px);
+        margin-right: clamp(10px, 1vw, 15px);
     }
 
 

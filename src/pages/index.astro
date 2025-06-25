@@ -1,19 +1,106 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
 ---
 
 <BaseLayout>
 
-	<Header />
-
 	<main>
 
-		
+		<a href="/despreMine">
+			<svg><rect/></svg>
+			<h1> Candidatură IT </h1>	
+			<p> by Raul </p>
+		</a>
 
 	</main>
 
-	<Footer />
-
 </BaseLayout>
+
+<style>
+	:root {
+		--border-color: red;
+		--shadow-color: rgba(255, 0, 0, 0.233);
+	}
+
+	main {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	a {
+		width: max-content;
+
+		text-decoration: none;
+		color: black;
+
+		padding: 10px 20px;
+
+		position: relative;
+	}
+	
+	h1 {
+		text-align: center;
+		font-size: clamp( 3rem, 10vw, 8rem );
+	}
+	
+	p {
+		text-align: right;
+		font-size: clamp(1rem, 2.5vw, 2rem);
+	}
+
+	svg {
+		width: 100%;
+		height: 100%;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	@keyframes border-animation {
+		0% {
+			stroke-dasharray: 300 0;
+			stroke-dashoffset: 0;
+		}
+		50% {
+			stroke-dasharray: 300 300;
+			stroke-dashoffset: 48;
+		}
+		100% {
+			stroke-dasharray: 300 0;
+			stroke-dashoffset: 0;
+		}
+	}
+
+	rect {
+		x: 0;
+		y: 0;
+
+		width: 100%;
+		height: 100%;
+
+		fill: none;
+
+		stroke: var(--border-color);
+		stroke-width: 8;
+
+		animation: 10s ease-in-out 0s infinite both border-animation;
+	}
+
+	a:hover rect {
+		animation-play-state: paused;
+	}
+
+	a {
+		transition: all 1s;
+		box-shadow: 1em 1em 0 0 var(--shadow-color);
+	}
+	a:hover {
+		color: white;
+		box-shadow: 0 0 0 0 var(--border-color),
+					inset -100em 0 0 0 var(--border-color);
+	}
+
+</style>
