@@ -3,6 +3,8 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 
+import Button4 from "@components/Buttons/Button-4.astro";
+
 const headerHeight = "70px";
 ---
 
@@ -12,7 +14,7 @@ const headerHeight = "70px";
 
 	<main>
 
-		<div class="snap-point">
+		<div class="snap-point snap-point-1">
 			<img src="/images/eu.jpg" alt="eu">
 			<div class="text">
 				<h1> Descriere </h1>
@@ -47,8 +49,10 @@ const headerHeight = "70px";
 				</table>
 			</div>
 		</div>
-		<div class="snap-point" style="font-size: 10rem;" > 2 </div>
-		<div class="snap-point" style="font-size: 10rem;" > 3 </div>
+		<div class="snap-point snap-point-2" >
+			<Button4 />
+		</div>
+		<!-- <div class="snap-point" style="font-size: 10rem;" > 3 </div> -->
 
 	</main>
 
@@ -56,7 +60,7 @@ const headerHeight = "70px";
 
 </BaseLayout>
 
-<style define:vars={{ headerHeight }}>
+<style define:vars={{ headerHeight }} lang="scss">
 
 	main {
 
@@ -71,19 +75,21 @@ const headerHeight = "70px";
 		background-color: pink;
 		border: 2px sotrd black;
 
-		scroll-snap-align: center;
+		scroll-snap-align: start;
+	}
 
+	.snap-point-1 {
+		
 		display: grid;
 		grid-template-columns: 2fr 3fr;
-
 	}
 
 	img {
 
-		max-height: 100vh;
+		max-height: calc(100vh - var(--headerHeight) );
 		max-width: 100%;
 
-		atrgn-self: center;
+		align-self: center;
 	}
 
 	.text { padding: 20px 30px; }
@@ -94,6 +100,12 @@ const headerHeight = "70px";
 		
 		padding: 5px 10px;
 		font-size: 1.5rem;
+	}
+
+	.snap-point-2 {
+
+		display: flex;
+		justify-content: center;
 	}
 
 </style>
