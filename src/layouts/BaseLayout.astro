@@ -1,5 +1,5 @@
 ---
-
+import { ClientRouter } from "astro:transitions";
 ---
 
 <html lang="en">
@@ -10,8 +10,10 @@
 		<meta name="generator" content={Astro.generator} />
 		
 		<link rel="stylesheet" href="/styles/global.css">
-		
+
 		<title> Candidatura </title>
+
+		<ClientRouter />
 	</head>
 	<body>
 

@@ -1,0 +1,49 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+
+import AnimatedBorder from "@layouts/AnimatedBorder.astro";
+
+import { slide } from "astro:transitions";
+---
+
+<BaseLayout>
+    <Header />
+
+    <main transition:animate={ slide({duration: "1s"}) } >
+
+        <a href="/deCeIT/pasiune/">
+            <section class="title">
+                <AnimatedBorder>
+                    <h1> De ce vreau eu să fiu coordonator IT? </h1>
+                    <h2> Iac-așa </h2>
+                </AnimatedBorder>
+            </section>
+        </a>
+
+    </main>
+
+    <Footer />
+</BaseLayout>
+
+<style lang="scss">
+
+    a {
+        text-decoration: unset;
+        color: black;
+    }
+
+    .title {
+
+        min-height: calc(100vh - 70px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: -70px;
+
+        h1 { font-size: clamp(1rem, 3.5vw, 5rem ); }
+    }
+
+</style>
