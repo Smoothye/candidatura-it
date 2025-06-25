@@ -3,15 +3,13 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 
 import Button4 from "@components/Buttons/Button-4.astro";
-
-const headerHeight = "70px";
 ---
 
 <BaseLayout>
 
-	<Header height={headerHeight} />
+	<Header />
 
-	<main transition:animate="slide">
+	<main>
 
 		<div class="snap-point snap-point-1">
 			<img src="/images/eu.jpg" alt="eu">
@@ -57,18 +55,18 @@ const headerHeight = "70px";
 
 </BaseLayout>
 
-<style define:vars={{ headerHeight }} lang="scss">
+<style lang="scss">
 
 	main {
 
-		max-height: calc(100vh - var(--headerHeight) );
+		max-height: 100vh;
 		overflow-y: scroll;
 		scroll-snap-type: y mandatory;
 	}
 
 	.snap-point {
 
-		min-height: calc(100vh - var(--headerHeight) );
+		min-height: 100vh;
 		background-color: pink;
 		border: 2px sotrd black;
 
@@ -83,7 +81,7 @@ const headerHeight = "70px";
 
 	img {
 
-		max-height: calc(100vh - var(--headerHeight) );
+		max-height: 100vh;
 		max-width: 100%;
 
 		align-self: center;

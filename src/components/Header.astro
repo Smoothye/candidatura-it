@@ -3,55 +3,64 @@ import Button1 from "./Buttons/Button-1.astro";
 import Button2 from "./Buttons/Button-2.astro";
 import Button3 from "./Buttons/Button-3.astro";
 
-const { backgroundColor="white", height="70px" } = Astro.props;
+const { backgroundColor="#93e1d8" } = Astro.props;
 ---
 
 <header>
     <nav>
 
-        <img src="" alt="Logo Candidatura">
-
-        <div id="links">
-            <Button1 text="Despre Mine" link="/despreMine/" />
-            <Button2 text="De Ce IT?" link="/deCeIT/question/" />
-            <Button3 text="De Ce Eu?" />
-        </div>
+        <Button1 class="nav-item" text="Despre Mine" />
+        <Button1 class="nav-item" text="De Ce IT?" />
+        <Button1 class="nav-item" text="De Ce Eu?" />
 
     </nav>
 </header>
-<div style=`height: ${height};`></div>
 
-<style define:vars={{ backgroundColor, height }}>
+<style define:vars={{ backgroundColor }}>
 
     header {
 
         background-color: var( --backgroundColor );
-        position: fixed;
         width: 100%;
 
         z-index: 100;
+
+        transition: all 0.5s;
     }
 
     nav {
         border: 1px solid black;
 
-        min-height: var( --height );
+        min-height: 100vh;
 
-        display: grid;
-        grid-template-columns: 1fr 3fr;
+        display: flex;
+        flex-direction: column;
+
         align-items: center;
+        justify-content: space-evenly;
     }
 
-    img {
-        display: block;
-        justify-self: center;
+    .nav-item {
+        transform: rotate(-90deg);
+
+        width: max-content;
+        
+        text-decoration: none;
+        color: black;
+        
+        font-size: 1.5rem;
+
+        transition: transform 0.5s;
     }
 
-    #links {
+    header:hover {
 
-        justify-self: end;
-        margin-right: clamp(10px, 1vw, 15px);
+        width: 20em;
     }
 
+    header:hover .nav-item {
+
+        transform: rotate(0) translate(60px);
+    }
 
 </style>

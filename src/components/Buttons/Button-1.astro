@@ -3,11 +3,13 @@ const {
     text="",
     link="",
     borderColor="red",
-    backgroundColor="white"
+    backgroundColor="white",
+    class: className,
+    ...rest
 } = Astro.props;
 ---
 
-<a href={link}>
+<a href={link} class={className} {...rest} >
 
     <svg><rect /></svg>
     {text}
@@ -28,6 +30,8 @@ const {
         position: relative;
 
         background-color: var( --backgroundColor );
+
+        border-radius: 4px;
     }
 
     svg {

@@ -3,11 +3,13 @@ const {
     text="",
     link="",
     borderColor="red",
-    backgroundColor="white"
+    backgroundColor="white",
+    class: className,
+    ...rest
 } = Astro.props;
 ---
 
-<a href={link}>
+<a href={link} class={className} {...rest}>
     {text}
 </a>
 
