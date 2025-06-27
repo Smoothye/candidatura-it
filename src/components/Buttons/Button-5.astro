@@ -33,7 +33,7 @@ const { href: link="", class: className, ...rest } = Astro.props;
             transform: translateY(-10px);
         }
         50% {
-            opacity: 1;
+            opacity: .4;
         }
         100% {
             opacity: 0;
@@ -55,8 +55,13 @@ const { href: link="", class: className, ...rest } = Astro.props;
             stroke-width: 3;
         }
 
-        animation: animate 1s ease-in-out infinite;
+        animation: animate 1s ease-in infinite;
     }
 
+    @for $i from 1 through 3 {
+        svg:nth-child(3n + #{$i}) {
+            animation-delay: ($i - 1) * -100ms;
+        }
+    }
 
 </style>
