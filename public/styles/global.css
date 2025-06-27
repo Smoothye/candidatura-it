@@ -21,3 +21,5 @@ body { overflow-x: hidden; }
 main { transition: transform 0.3s; }
 
 header:hover + main { transform: translate(100px); }
+
+.grid main { width: 90%; }

@@ -8,8 +8,105 @@ import Header from "@components/Header.astro";
 
     <main>
 
-        
+        <div class="snap-point snap-point-1">
+            <h1>
+                De ce să mă alegeți pe mine?
+            </h1>
+        </div>
+        <div class="snap-point snap-point-2">
+            <div class="grid-item">
+                <img src="/images/icons/laptop.svg" alt="laptop icon">
+                <h2> A </h2>
+            </div>
+            <div class="grid-item">
+                <img src="/images/icons/time.svg" alt="clock icon">
+                <h2> B </h2>
+            </div>
+            <div class="grid-item">
+                <img src="/images/icons/heart.svg" alt="heart icon">
+                <h2> C </h2>
+            </div>
+            <div class="grid-item">
+                <img src="/images/icons/manager.svg" alt="man icon">
+                <h2> D </h2>
+            </div>
+        </div>
 
     </main>
 
 </BaseLayout>
+
+<style lang="scss">
+
+    main {
+
+        max-height: 100vh;
+
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+    }
+
+    .snap-point {
+
+        min-height: 100vh;
+        min-width: 100%;
+
+        scroll-snap-align: center;
+        
+        background-color: pink;
+        border: 1px solid black;
+    }
+
+    .snap-point-1 {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+
+            max-width: 80%;
+
+            text-align: center;
+            font-size: clamp(1rem, 10vw, 15rem);
+
+            $color-1: #186cb8;
+            $color-2: #2a9a9f;
+            $color-3: #f1b211;
+            $color-4: #e83611;
+            $color-5: #f9002f;
+ 
+            background: linear-gradient(219deg, 
+                $color-1 19%, 
+                $color-2 20%, $color-2 39%,
+                $color-3 40%, $color-3 59% ,
+                $color-4 60%, $color-4 79%,
+                $color-5 80%
+            );
+
+            background-clip: text;
+            color: transparent;
+        }
+    }
+
+    .snap-point-2 {
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        align-items: center;
+        justify-content: center;
+
+        .grid-item {
+
+            text-align: center;
+
+            img {
+                aspect-ratio: 1 / 1;
+            }
+        }
+    }
+
+</style>
