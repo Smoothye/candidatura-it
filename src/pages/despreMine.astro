@@ -3,6 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 
 import Button4 from "@components/Buttons/Button-4.astro";
+import Button5 from "@components/Buttons/Button-5.astro";
 ---
 
 <BaseLayout>
@@ -44,9 +45,10 @@ import Button4 from "@components/Buttons/Button-4.astro";
 						
 					</tbody>
 				</table>
+				<Button5 class="down-button" href="#snap-point-2" />
 			</div>
 		</div>
-		<div class="snap-point snap-point-2" >
+		<div class="snap-point snap-point-2" id="snap-point-2">
 			<Button4 />
 		</div>
 
@@ -86,7 +88,19 @@ import Button4 from "@components/Buttons/Button-4.astro";
 		align-self: center;
 	}
 
-	.text { padding: 20px 30px; }
+	.text {
+		padding: 20px 30px;
+
+		position: relative;
+	
+		.down-button {
+
+			position: absolute;
+			bottom: 10px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
 	.text table {
 		margin: 20px 0;
 	}
