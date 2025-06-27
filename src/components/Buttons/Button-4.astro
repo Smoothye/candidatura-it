@@ -85,10 +85,10 @@
 
     .menu-item {
 
-        &:hover {
-            background-color: white;
-            color: $fg;
-        }
+        // &:hover {
+        //     background-color: white;
+        //     color: $fg;
+        // }
         @for $i from 1 through $menu-items {
             &:nth-child(#{$i+2}) {
                 transition-duration: 10ms + (60ms * ($i));

@@ -1,0 +1,62 @@
+---
+const { class: className, ...rest } = Astro.props;
+---
+
+<div class={className} {...rest}>
+    <a href="">
+        <svg>
+            <line x1="0" y1="0" x2="50%" y2="100%" />
+            <line x1="50%" y1="100%" x2="100%" y2="0" />
+        </svg>
+        <svg>
+            <line x1="0" y1="0" x2="50%" y2="100%" />
+            <line x1="50%" y1="100%" x2="100%" y2="0" />
+        </svg>
+        <svg>
+            <line x1="0" y1="0" x2="50%" y2="100%" />
+            <line x1="50%" y1="100%" x2="100%" y2="0" />
+        </svg>
+    </a>
+</div>
+
+<style lang="scss">
+
+    a {
+        all: unset;
+        cursor: pointer;
+    }
+
+    @keyframes animate {
+
+        0% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(5px);
+        }
+        
+    }
+
+    svg {
+
+        height: 2vh;
+        width: 6vw;
+
+        display: block;
+        
+        line {
+    
+            stroke: black;
+            stroke-width: 3;
+        }
+
+        animation: animate 1s ease-in-out infinite;
+    }
+
+
+</style>
