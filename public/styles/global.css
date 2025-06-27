@@ -18,7 +18,10 @@
 
 body { overflow-x: hidden; }
 
-main { transition: transform 0.3s; }
+main {
+    transition: transform 0.3s;
+    scroll-behavior: smooth;
+}
 
 header:hover + main { transform: translate(100px); }
 

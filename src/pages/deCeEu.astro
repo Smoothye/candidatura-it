@@ -14,9 +14,9 @@ import Button5 from "@components/Buttons/Button-5.astro";
             <h1>
                 De ce să mă alegeți pe mine?
             </h1>
-            <Button5 class="down-button" />
+            <Button5 class="down-button" href="#snap-point-2" />
         </div>
-        <div class="snap-point snap-point-2">
+        <div class="snap-point snap-point-2" id="snap-point-2">
             <div class="grid-item">
                 <img src="/images/icons/laptop.svg" alt="laptop icon">
                 <h2> Experienta IT </h2>
@@ -51,6 +51,7 @@ import Button5 from "@components/Buttons/Button-5.astro";
                     <li> 3 </li>
                 </ul>
             </div>
+            <Button5 class="down-button" />
         </div>
 
     </main>
@@ -78,12 +79,6 @@ import Button5 from "@components/Buttons/Button-5.astro";
 
         position: relative;
         
-        .down-button {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
     }
 
     .snap-point-1 {
@@ -156,6 +151,13 @@ import Button5 from "@components/Buttons/Button-5.astro";
                 grid-area: list;
             }
         }
+    }
+
+    .snap-point .down-button {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
 </style>
