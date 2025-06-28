@@ -54,12 +54,13 @@
         
         border-radius: 100%;
 
-        width: 40vmin;
-        height: 40vmin;
+        $radius: 40vmin;
+        width: $radius;
+        height: $radius;
         
         position: absolute;
         top: 20px;
-        left: 50px;
+        left: calc( -1 * $radius / 2 + 190px);
 
         color: white;
         text-align: center;
@@ -107,7 +108,7 @@
         
         transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
         transition-duration: 400ms;
-        transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+        // transform: scale(1.1, 1.1) translate3d(0, 0, 0);
         
         cursor: pointer;
 
