@@ -1,0 +1,115 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+
+import Button5 from "@components/Buttons/Button-5.astro";
+---
+
+<BaseLayout>
+    <Header />
+
+    <main>
+        
+        <div class="snap-point snap-point-1">
+            <h1> Stop the <em>HATE</em>! </h1>
+            <h1> Embrace <em>LOVE</em>! </h1>
+            <img src="/images/icons/wordpress.svg" alt="WordPress Logo">
+            <img src="/images/icons/php.svg" alt="PHP Logo">
+            <Button5 class="down-button" href="#snap-point-2">
+        </div>
+        <div class="snap-point snap-point-2" id="snap-point-2">
+            
+        </div>
+
+    </main>
+
+</BaseLayout>
+
+<style lang="scss">
+
+    main {
+
+        max-height: 100vh;
+
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+    }
+
+    .snap-point {
+
+        min-height: 100vh;
+        min-width: 100%;
+
+        scroll-snap-align: center;
+        
+        background-color: pink;
+
+        position: relative;
+        
+    }
+
+    @keyframes typewritter {
+        from { width: 0; }
+        to {width: 16ex;}
+    }
+    @keyframes cursor {
+        from { border-right-color: transparent; }
+        to { border-right-color: white }
+    }
+
+    .snap-point-1 {
+        
+        display: grid;
+
+        grid-template-areas:
+            "header-1   header-1"
+            "header-2   header-2"
+            "img-left   img-right"
+        ;
+
+        grid-template-columns: 1fr 1fr;
+
+        align-items: center;
+
+        h1 {
+
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 20rem);
+
+            justify-self: center;
+            
+            white-space: nowrap;
+            overflow-x: hidden;
+
+            border-right: 4px solid transparent;
+
+            animation:
+                typewritter 2s steps(20) normal both,
+                cursor 1s steps(2, jump-none) normal backwards;
+    
+            &:nth-of-type(2n + 1) {
+                grid-area: header-1;
+                animation-delay: 1s, 1s;
+                animation-iteration-count: 1, 4;
+            }
+            &:nth-of-type(2n + 2) {
+                grid-area: header-2;
+                animation-delay: 5s, 5s;
+                animation-iteration-count: 1, infinite;
+            }
+        }
+
+        img {
+            width: 80%;
+            justify-self: center;
+        }
+    }
+
+    .snap-point .down-button {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+</style>
