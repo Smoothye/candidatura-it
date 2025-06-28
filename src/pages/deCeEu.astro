@@ -44,7 +44,7 @@ import Button5 from "@components/Buttons/Button-5.astro";
             </div>
             <div class="grid-item">
                 <img src="/images/icons/manager.svg" alt="man icon">
-                <h2> Experienta Coordonare (ish) </h2>
+                <h2> Experienta MO (ish) </h2>
                 <ul>
                     <li> Am fost MO de aMW </li>
                     <li> 2 </li>
@@ -137,6 +137,8 @@ import Button5 from "@components/Buttons/Button-5.astro";
 
             justify-content: left;
 
+            grid-template-columns: auto 1fr;
+
             img {
                 grid-area: img;
                 
@@ -146,9 +148,14 @@ import Button5 from "@components/Buttons/Button-5.astro";
             }
             h2 {
                 grid-area: header;
+                font-size: min(2vw, 20rem);
             }
             ul {
                 grid-area: list;
+
+                li {
+                    font-size: clamp(1rem, 1vw, 15rem);
+                }
             }
         }
     }
