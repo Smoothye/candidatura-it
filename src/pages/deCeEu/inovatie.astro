@@ -15,11 +15,36 @@ import Button5 from "@components/Buttons/Button-5.astro";
             <h1> Embrace <em>LOVE</em>! </h1>
             <img src="/images/icons/wordpress.svg" alt="WordPress Logo">
             <img src="/images/icons/php.svg" alt="PHP Logo">
-            <Button5 class="down-button" href="#snap-point-2">
+            <Button5 class="down-button" href="#snap-point-2" />
         </div>
         <div class="snap-point snap-point-2" id="snap-point-2">
-            
+            <h2> Domeniul "jobshop.ro" (actual: "js.bestcj.ro") </h2>
+            <h2> Tehnologiile pe care le folosim &rArr; consecvență </h2>
+            <div class="trainings">
+                <h2> Training-uri: </h2>
+                <ul>
+                    <li> Basic HTML & CSS (the bread and butter) </li>
+                    <li> How to Spread Shit: The World of SpreadSheets </li>
+                    <li> Lavaravel | Astro | PHP | WordPress </li>
+                </ul>
+            </div>
+            <Button5 class="down-button" href="#snap-point-3" />
         </div>
+        <div class="snap-point snap-point-3" id="snap-point-3">
+            <div class="surprised-cat"> 🙀 </div>
+            <h1> BUBA! </h1>
+            <p> BeNerd vs RoBT </p>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+            <defs>
+                <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                </filter>
+            </defs>
+        </svg>
 
     </main>
 
@@ -73,7 +98,7 @@ import Button5 from "@components/Buttons/Button-5.astro";
 
         h1 {
 
-            text-align: center;
+            text-apgn: center;
             font-size: clamp(2rem, 4vw, 20rem);
 
             justify-self: center;
@@ -81,7 +106,7 @@ import Button5 from "@components/Buttons/Button-5.astro";
             white-space: nowrap;
             overflow-x: hidden;
 
-            border-right: 4px solid transparent;
+            border-right: 4px sopd transparent;
 
             animation:
                 typewritter 2s steps(20) normal both,
@@ -102,6 +127,84 @@ import Button5 from "@components/Buttons/Button-5.astro";
         img {
             width: 80%;
             justify-self: center;
+        }
+    }
+
+    .snap-point-2 {
+
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: space-evenly;
+
+        h2 {
+            font-size: clamp(1rem, 2.5vw, 20rem);
+            
+            width: max-content;
+            padding: 5px 10px;
+
+        }
+        > h2 {
+            margin-left: 20px;
+
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .trainings {
+
+            margin-left: 20px;
+            filter: url("#goo");
+
+            ul {
+                list-style-type: none;
+                margin-left: 40px;
+
+            }
+
+            li {
+                width: max-content;
+                padding: 10px 30px 10px 20px;
+
+                font-size: clamp(0.8rem, 1.5vw, 15rem);
+            }
+
+            h2, li {
+                background-color: white;
+            }
+        }
+    }
+
+    .snap-point-3 {
+
+        h1 {
+            color: #F9f1cc;
+            font-size: clamp(1rem, 20vw, 20rem);
+            text-align: center;
+            text-shadow:
+                5px 5px 0px #FFB650, 
+                10px 10px 0px #FFD662, 
+                15px 15px 0px  #FF80BF, 
+                20px 20px 0px #EF5097, 
+                25px 25px 0px #6868AC, 
+                30px 30px 0px #90B1E0;
+        }
+
+        p {
+            font-size: clamp(0.8rem, 8vw, 16rem);
+            text-align: center;
+        }
+
+        .surprised-cat {
+
+            position: absolute;
+            transform: rotateZ(35deg);
+            bottom: -100px;
+            left: -100px;
+
+            font-size: 20rem;
         }
     }
 
