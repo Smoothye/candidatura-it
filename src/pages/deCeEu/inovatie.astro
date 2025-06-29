@@ -31,6 +31,12 @@ import Button5 from "@components/Buttons/Button-5.astro";
             <Button5 class="down-button" href="#snap-point-3" />
         </div>
         <div class="snap-point snap-point-3" id="snap-point-3">
+            <div class="grid-item grid-item-1"> Scoring App </div>
+            <div class="grid-item grid-item-2"> Aplicația BEST-ului<br>(este defapt interfața de KM) </div>
+            <div class="grid-item grid-item-3"> Fun Activities?<br> </div>
+            <Button5 class="down-button" href="#snap-point-4" />
+        </div>
+        <div class="snap-point snap-point-4" id="snap-point-4">
             <div class="surprised-cat"> 🙀 </div>
             <h1> BUBA! </h1>
             <p> BeNerd vs RoBT </p>
@@ -39,9 +45,9 @@ import Button5 from "@components/Buttons/Button-5.astro";
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
             <defs>
                 <filter id="goo">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
-                <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                    <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
                 </filter>
             </defs>
         </svg>
@@ -51,6 +57,7 @@ import Button5 from "@components/Buttons/Button-5.astro";
 </BaseLayout>
 
 <style lang="scss">
+    @use 'sass:list';
 
     main {
 
@@ -98,7 +105,7 @@ import Button5 from "@components/Buttons/Button-5.astro";
 
         h1 {
 
-            text-apgn: center;
+            text-align: center;
             font-size: clamp(2rem, 4vw, 20rem);
 
             justify-self: center;
@@ -178,6 +185,32 @@ import Button5 from "@components/Buttons/Button-5.astro";
     }
 
     .snap-point-3 {
+
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+
+        
+        .grid-item {
+            
+            height: 100%;
+            
+            display: flex;
+            align-items: center;
+            
+            font-size: clamp(2rem, 4vw, 20rem);
+            
+            padding-left: 20px;
+        }
+
+        $colors: #FBC2B5, #FFA8A9, #F786AA;
+        @for $i from 1 through 3 {
+            .grid-item-#{$i} {
+                background-color: list.nth($colors, $i);
+            }
+        }
+    }
+
+    .snap-point-4 {
 
         h1 {
             color: #F9f1cc;
