@@ -46,14 +46,16 @@ const { backgroundColor="#93e1d8" } = Astro.props;
         text-decoration: none;
         color: black;
         
-        font-size: 1.5rem;
+        font-size: clamp(1.5rem, 1vw, 5rem);
 
         transition: transform 0.5s;
+        
+        transform-origin: left left;
     }
 
     header:hover {
 
-        width: 20em;
+        width: 25vw;
     }
 
     header:hover .nav-item {
